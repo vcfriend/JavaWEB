@@ -34,7 +34,7 @@ public class TCityRepositoryImpl extends BaseRepository implements TCityReposito
     @Override
     public QueryResults<Tuple> findCityAndHotelPage(Predicate predicate,Pageable pageable) {
         JPAQueryFactory queryFactory = new JPAQueryFactory(em);
-        JPAQuery<Tuple> jpaQuery = queryFactory.select(QTCity.tCity.id,QTHotel.tHotel)
+        JPAQuery<Tuple> jpaQuery = queryFactory.select(QTCity.tCity.id,QTCity.tCity.name,QTHotel.tHotel)
                                                .from(QTCity.tCity)
                                                .leftJoin(QTHotel.tHotel)
                                                .on(QTHotel.tHotel.city.longValue().eq(QTCity.tCity.id.longValue()))

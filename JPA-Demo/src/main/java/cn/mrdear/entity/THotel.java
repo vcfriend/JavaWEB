@@ -83,4 +83,14 @@ public class THotel {
         result = 31 * result + (city != null ? city.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "THotel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", address='" + address + '\'' +
+                ", city=" + city +
+                '}';
+    }
 }

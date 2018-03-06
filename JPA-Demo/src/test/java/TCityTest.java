@@ -57,8 +57,10 @@ public class TCityTest {
         Predicate predicate = qtCity.name.like("shanghai");
         List<Tuple> result = tCityRepository.findCityAndHotel(predicate);
         for (Tuple row : result) {
-            System.out.println("qtCity:"+row.get(qtCity));
-            System.out.println("qtHotel:"+row.get(qtHotel));
+            System.out.println("qtCity: "+qtCity.name.getMetadata().getName() +" "+row.get(qtCity).getId()+"  "+row.get(qtCity).getName()+" "+row.get(qtCity).getCountry());
+            System.out.println("qtCity:"+row.get(qtCity).toString());
+            System.out.println("qtHotel:"+row.get(qtHotel).getId()+" "+row.get(qtHotel).getName()+" "+row.get(qtHotel).getCity());
+            System.out.println("qtHotel:"+row.get(qtHotel).toString());
             System.out.println("--------------------");
         }
         System.out.println(result);
@@ -71,8 +73,8 @@ public class TCityTest {
         PageRequest pageRequest = new PageRequest(0,10);
         QueryResults<Tuple> result = tCityRepository.findCityAndHotelPage(predicate,pageRequest);
         for (Tuple row : result.getResults()) {
-            System.out.println("qtCity:"+row.get(qtCity));
-            System.out.println("qtHotel:"+row.get(qtHotel));
+            System.out.println("qtCity:"+row.get(qtCity.id)+" \t"+row.get(qtCity.name));
+            System.out.println("qtHotel:"+row.get(qtHotel)+" \t"+row.get(qtHotel).getId()+" \t"+row.get(qtHotel).getName()+" \t"+row.get(qtHotel).getCity());
             System.out.println("--------------------");
         }
         System.out.println(result.getTotal());

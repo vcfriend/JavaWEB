@@ -74,7 +74,7 @@
                 <!--添加一条解释型标注-->
                 <prop key="hibernate.use_sql_comments">false</prop>
                 <!--配置如何根据java模型生成数据库表结构,常用update,validate-->
-                <prop key="hibernate.hbm2ddl.auto">none</prop>
+                <prop key="hibernate.hbm2ddl.auto">update</prop>
             </props>
         </property>
     </bean>

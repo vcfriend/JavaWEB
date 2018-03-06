@@ -97,4 +97,15 @@ public class TCity {
         result = 31 * result + (map != null ? map.hashCode() : 0);
         return result;
     }
+
+    @Override
+    public String toString() {
+        return "TCity{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", state='" + state + '\'' +
+                ", country='" + country + '\'' +
+                ", map='" + map + '\'' +
+                '}';
+    }
 }
